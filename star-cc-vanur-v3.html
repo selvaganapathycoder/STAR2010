@@ -38,9 +38,12 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 .screen.active{display:block;}
 
 /* ===== HEADER ===== */
-.app-header{background:rgba(8,12,20,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;background:linear-gradient(135deg,var(--gold),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;gap:10px;}
-.logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(251,191,36,0.5);box-shadow:0 0 12px rgba(245,158,11,0.4);flex-shrink:0;}
+.app-header{background:rgba(8,12,20,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:10px 15px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+@media(min-width:400px){ .app-header{padding:12px 20px;} }
+.logo{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:1px;background:linear-gradient(135deg,var(--gold),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;gap:8px;}
+@media(min-width:400px){ .logo{font-size:22px; gap:10px;} }
+.logo-img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid rgba(251,191,36,0.5);box-shadow:0 0 12px rgba(245,158,11,0.4);flex-shrink:0;}
+@media(min-width:400px){ .logo-img{width:42px; height:42px;} }
 .logo-text{display:flex;flex-direction:column;}
 .logo span{font-size:12px;display:block;letter-spacing:3px;opacity:0.7;font-family:'Rajdhani',sans-serif;font-weight:600;-webkit-text-fill-color:var(--text2);}
 .header-btns{display:flex;gap:8px;}
@@ -62,17 +65,22 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 /* ===== HOME SCREEN ===== */
 #screen-home{padding:20px;}
 .home-hero{text-align:center;padding:40px 20px 30px;}
-.home-hero h1{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:4px;line-height:1;background:linear-gradient(135deg,#fbbf24,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.home-hero p{color:var(--text2);font-size:14px;letter-spacing:3px;margin-top:8px;font-weight:600;}
-.home-actions{display:grid;gap:12px;max-width:400px;margin:0 auto 30px;}
+.home-hero h1{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:4px;line-height:1;background:linear-gradient(135deg,#fbbf24,#f59e0b,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+@media(max-width:380px){ .home-hero h1{font-size:38px;} }
+.home-hero p{color:var(--text2);font-size:13px;letter-spacing:2px;margin-top:8px;font-weight:600;}
+.home-actions{display:grid;gap:10px;max-width:400px;margin:0 auto 25px;}
 .home-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:400px;margin:0 auto 30px;}
-.stat-mini{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;text-align:center;}
-.stat-mini .val{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--gold);}
-.stat-mini .lbl{font-size:11px;color:var(--text2);letter-spacing:1px;font-weight:600;}
+.stat-mini{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 6px;text-align:center;}
+@media(min-width:400px){ .stat-mini{padding:14px;} }
+.stat-mini .val{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--gold);}
+@media(min-width:400px){ .stat-mini .val{font-size:28px;} }
+.stat-mini .lbl{font-size:9px;color:var(--text2);letter-spacing:0.5px;font-weight:600;}
+@media(min-width:400px){ .stat-mini .lbl{font-size:11px; letter-spacing:1px;} }
 
 /* ===== SQUAD SCREEN ===== */
 #screen-squad{padding:20px;}
-.squad-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:20px;}
+.squad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px;}
+@media(min-width:600px){ .squad-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));} }
 .player-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;cursor:pointer;transition:all 0.25s;position:relative;overflow:hidden;}
 .player-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity 0.3s;}
 .player-card:hover{transform:translateY(-4px);border-color:rgba(251,191,36,0.3);box-shadow:0 10px 40px rgba(0,0,0,0.3);}
@@ -125,7 +133,8 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 .team-name-display{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--text2);}
 .vs-badge{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:3px 10px;font-size:11px;color:var(--text3);font-weight:700;letter-spacing:1px;}
 .score-display{text-align:center;margin-bottom:8px;}
-.score-main{font-family:'Bebas Neue',sans-serif;font-size:64px;line-height:1;letter-spacing:2px;color:var(--text);}
+.score-main{font-family:'Bebas Neue',sans-serif;font-size:60px;line-height:1;letter-spacing:2px;color:var(--text);}
+@media(max-width:380px){ .score-main{font-size:48px;} }
 .score-over{font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--text2);margin-top:2px;}
 .powerplay-badge{display:inline-block;background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.2));border:1px solid rgba(245,158,11,0.4);border-radius:20px;padding:3px 12px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--gold);margin:4px 0;animation:ppulse 2s infinite;}
 @keyframes ppulse{0%,100%{opacity:1;}50%{opacity:0.6;}}
@@ -136,8 +145,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 
 /* BATSMEN TABLE */
 .batsmen-panel{padding:10px 20px;border-bottom:1px solid var(--border);}
-.batsmen-row{display:grid;grid-template-columns:auto 1fr repeat(4,auto);gap:8px;align-items:center;padding:6px 0;font-size:13px;}
-.batsmen-row.header{font-size:10px;color:var(--text3);letter-spacing:1.5px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:2px;}
+.batsmen-row{display:grid;grid-template-columns:12px 1fr repeat(4, 32px);gap:4px;align-items:center;padding:7px 0;font-size:12px;}
+.batsmen-row.header{font-size:9px;color:var(--text3);letter-spacing:1px;font-weight:700;border-bottom:1px solid var(--border);padding-bottom:6px;margin-bottom:2px;}
+@media(min-width:400px){ .batsmen-row{grid-template-columns:15px 1fr repeat(4, 40px); font-size:13px; gap:8px;} }
 .on-strike{color:var(--gold);font-weight:700;}
 .strike-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);}
 .no-strike{width:8px;height:8px;}
@@ -169,8 +179,10 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 
 /* SCORING PANEL */
 .scoring-panel{margin-top:auto;background:rgba(8,12,20,0.98);border-top:1px solid var(--border);padding:12px 16px;padding-bottom:max(12px,env(safe-area-inset-bottom));position:sticky;bottom:0;}
-.score-btns-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:8px;}
-.score-btn{height:56px;border-radius:var(--radius-sm);border:none;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;transition:all 0.15s;position:relative;overflow:hidden;}
+.score-btns-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:8px;}
+@media(max-width:360px){ .score-btns-grid{gap:4px;} }
+.score-btn{height:48px;border-radius:var(--radius-sm);border:none;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1px;transition:all 0.15s;position:relative;overflow:hidden;}
+@media(min-width:400px){ .score-btn{height:56px; font-size:24px;} }
 .score-btn::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0);transition:background 0.1s;}
 .score-btn:active::after{background:rgba(255,255,255,0.15);}
 .sb-0{background:var(--surface);border:1px solid var(--border);color:var(--text2);}
@@ -241,9 +253,9 @@ body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:
 .summary-result{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;}
 .summary-score{font-family:'Bebas Neue',sans-serif;font-size:48px;letter-spacing:2px;}
 .summary-teams{font-size:14px;color:var(--text2);font-weight:600;letter-spacing:1px;}
-.summary-section{padding:16px 20px;border-bottom:1px solid var(--border);}
+.summary-section{padding:16px 20px;border-bottom:1px solid var(--border);overflow-x:auto;}
 .summary-section-title{font-size:11px;font-weight:700;letter-spacing:2.5px;color:var(--text3);text-transform:uppercase;margin-bottom:12px;}
-.scorecard-table{width:100%;border-collapse:collapse;}
+.scorecard-table{width:100%;min-width:280px;border-collapse:collapse;}
 .scorecard-table th{font-size:10px;color:var(--text3);letter-spacing:1.5px;font-weight:700;text-align:right;padding:0 0 8px;text-transform:uppercase;}
 .scorecard-table th:first-child{text-align:left;}
 .scorecard-table td{padding:8px 0;border-top:1px solid rgba(255,255,255,0.04);font-size:13px;text-align:right;font-family:'JetBrains Mono',monospace;}
@@ -778,31 +790,31 @@ function photoToRole(photo){
   return 'Batsman';
 }
 const DEFAULT_PLAYERS = [
-  {name:"Arjun Kumar",   photo:"players/batsman.png",   isDefault:true},
-  {name:"Ravi Shankar",  photo:"players/batsman2.png",  isDefault:true},
-  {name:"Mohammed Ali",  photo:"players/allrounder.png",isDefault:true},
-  {name:"Suresh Babu",   photo:"players/batsman.png",   isDefault:true},
-  {name:"Karthik Raja",  photo:"players/keeper.png",    isDefault:true},
-  {name:"Dinesh Vel",    photo:"players/allrounder.png",isDefault:true},
-  {name:"Vijay Anand",   photo:"players/bowler.png",    isDefault:true},
-  {name:"Senthil Kumar", photo:"players/bowler.png",    isDefault:true},
-  {name:"Praveen T",     photo:"players/allrounder.png",isDefault:true},
-  {name:"Muthu Selvan",  photo:"players/batsman2.png",  isDefault:true},
-  {name:"Bala Krishna",  photo:"players/bowler.png",    isDefault:true},
-  {name:"Ganesh P",      photo:"players/batsman.png",   isDefault:true},
-  {name:"Siva Prasad",   photo:"players/bowler.png",    isDefault:true},
-  {name:"Anbu Chelvan",  photo:"players/allrounder.png",isDefault:true},
-  {name:"Manoj Kumar",   photo:"players/batsman2.png",  isDefault:true},
-  {name:"Ramesh V",      photo:"players/bowler.png",    isDefault:true},
-  {name:"Kumar Raja",    photo:"players/keeper.png",    isDefault:true},
-  {name:"Subash C",      photo:"players/allrounder.png",isDefault:true},
-  {name:"Harish M",      photo:"players/batsman.png",   isDefault:true},
-  {name:"Durai Raj",     photo:"players/bowler.png",    isDefault:true},
-  {name:"Tamil Selvan",  photo:"players/batsman2.png",  isDefault:true},
-  {name:"Pradeep N",     photo:"players/allrounder.png",isDefault:true},
-  {name:"Vel Murugan",   photo:"players/bowler.png",    isDefault:true},
-  {name:"Saravanan K",   photo:"players/batsman.png",   isDefault:true},
-  {name:"Jeeva A",       photo:"players/allrounder.png",isDefault:true}
+  {name:"RAVI",       photo:"players/batsman.png",   isDefault:true},
+  {name:"DHANI",      photo:"players/batsman2.png",  isDefault:true},
+  {name:"BAS",        photo:"players/allrounder.png",isDefault:true},
+  {name:"KIRUBA",     photo:"players/batsman.png",   isDefault:true},
+  {name:"GANAPATHY",  photo:"players/keeper.png",    isDefault:true},
+  {name:"PREM",       photo:"players/allrounder.png",isDefault:true},
+  {name:"PRASANTH",   photo:"players/bowler.png",    isDefault:true},
+  {name:"VIJI",       photo:"players/bowler.png",    isDefault:true},
+  {name:"MANI",       photo:"players/allrounder.png",isDefault:true},
+  {name:"SURENDHER",  photo:"players/batsman2.png",  isDefault:true},
+  {name:"LOGESH",     photo:"players/bowler.png",    isDefault:true},
+  {name:"PRAVEEN",    photo:"players/batsman.png",   isDefault:true},
+  {name:"KAVI",       photo:"players/bowler.png",    isDefault:true},
+  {name:"MANO",       photo:"players/allrounder.png",isDefault:true},
+  {name:"AD SHAKER",  photo:"players/batsman2.png",  isDefault:true},
+  {name:"KABILAN",    photo:"players/bowler.png",    isDefault:true},
+  {name:"SATHI",      photo:"players/keeper.png",    isDefault:true},
+  {name:"RAM",        photo:"players/allrounder.png",isDefault:true},
+  {name:"HARI",       photo:"players/batsman.png",   isDefault:true},
+  {name:"SUNIL",      photo:"players/bowler.png",    isDefault:true},
+  {name:"JOHN",       photo:"players/batsman2.png",  isDefault:true},
+  {name:"SUBASH",     photo:"players/allrounder.png",isDefault:true},
+  {name:"VISHAL",     photo:"players/bowler.png",    isDefault:true},
+  {name:"KAMESH",     photo:"players/batsman.png",   isDefault:true},
+  {name:"MATHISH",    photo:"players/allrounder.png",isDefault:true}
 ];
 
 let players = [];
